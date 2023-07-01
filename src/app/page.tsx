@@ -8,8 +8,8 @@ const setType3 = "masters"
 const setType4 = "draft_innovation"
 const setType5 = "masterpiece"
 const setType6 = "starter"
-const setType7 = "from_the_vault"
-const setType8 = "funny"
+const setType7 = "funny"
+const setType8 = "from_the_vault"
 const skippedSets = [
   "Summer Magic / Edgar",
   "Innistrad: Midnight Hunt",
@@ -23,8 +23,12 @@ const skippedSets = [
   "March of the Machine",
   "March of the Machine: The Aftermath",
   "Chronicles Foreign Black Border",
-  "Renaissance",
-  "Rinascimento",
+  // "Renaissance",
+  // "Rinascimento",
+  "Double Masters",
+  "Time Spiral Remastered",
+  "Double Masters 2022",
+  "Commander Legends",
   "Mystery Booster",
   "Mystery Booster Retail Edition Foils",
   "The List",
@@ -48,6 +52,8 @@ const skippedSets = [
   "2020 Heroes of the Realm",
   "Mystery Booster Playtest Cards 2021",
   "2021 Heroes of the Realm",
+  "Unsanctioned",
+  "Unfinity",
   "Unfinity Sticker Sheets",
   "The List (Unfinity Foil Edition)",
   "Transformers",
@@ -98,10 +104,10 @@ const binders = [
   { binder: 21, nrOfSets: 3 }, // Tenth Edition
   { binder: 22, nrOfSets: 4 }, // Magic 2012
   { binder: 23, nrOfSets: 4 }, // Magic Origins
-  { binder: 24, nrOfSets: 5 },
-  { binder: 25, nrOfSets: 6 },
-  { binder: 26, nrOfSets: 6 },
-  { binder: 27, nrOfSets: 17 },
+  { binder: 24, nrOfSets: 6 }, // Chronicles
+  { binder: 25, nrOfSets: 4 }, // Modern Masters 2017
+  { binder: 26, nrOfSets: 5 }, // Conspiracy
+  { binder: 27, nrOfSets: 20 }, // Zendikar Expeditions
   { binder: 28, nrOfSets: 20 },
 ]
 
@@ -118,7 +124,7 @@ const getSetData = (type: string) => {
   })
 }
 
-getSetData(setType8)
+// getSetData(setType8)
 getSetData(setType7)
 getSetData(setType6)
 getSetData(setType5)
@@ -154,6 +160,7 @@ binders.forEach(binder => {
   if (binder.nrOfSets === 8) { svgSize = 21 }
   if (binder.nrOfSets === 9) { svgSize = 20 }
   if (binder.nrOfSets >= 10) { svgSize = 18 }
+  if (binder.nrOfSets >= 18) { svgSize = 15 }
   binderData.push({
     binder: binder.binder,
     fontSize: fontSize,
